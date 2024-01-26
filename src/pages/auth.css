@@ -1,0 +1,28 @@
+.form-container {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+}
+
+.form-container header {
+    font-size: 36px;
+    margin: 30px;
+}
+
+.form-container form input[type="text"],
+.form-container form input[type="password"]{
+    height: 30px;
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-container form button{
+    height: 30px;
+    font-size: 16px;
+    padding: 0 20px;
+}
