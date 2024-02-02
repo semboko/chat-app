@@ -1,0 +1,169 @@
+.chat-page{
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.chat-container{
+    flex-grow: 1;
+    margin-right: 20px;
+    height: 60%;
+}
+
+.chat-element header {
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.groups-list-container{
+    background-color: #fff;
+    padding: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    min-height: 60%;
+}
+
+.chat-container{
+    background-color: #fff;
+    padding: 20px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+.group_search label{
+    position: absolute;
+    font-size: 18px;
+    margin-top: calc(28px/2);
+    margin-left: 10px;
+}
+.group_search input{
+    padding: 10px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.groups-list{
+    position: relative;
+}
+
+.groups-list ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.groups-list li {
+    margin-top: 10px;
+}
+
+.groups-list a{
+    color: #333333;
+    text-decoration: none;
+}
+
+.groups-list h2{
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.add-group-button{
+    background-color: #000000;
+    border: none;
+    padding: 3px 7px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+@media (width <= 800px){
+    .groups-list-container{
+        position: absolute;
+    }
+}
+
+.chat-element{
+    position: relative;
+    height: 100%;
+}
+
+.chat-element header{
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100;
+}
+
+.messages-container{
+    position: absolute;
+    bottom: 70px;
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+.message-container{
+    margin-top: 10px;
+}
+
+.message-header{
+    position: relative;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+
+.message-text{
+    margin-left: 40px;
+    font-size: 15px;
+}
+
+.message-author span{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.message-date {
+    position: absolute;
+    top: 0;
+    right: 15px;
+}
+
+.message-date span{
+    font-size: 12px;
+    color: #797979;
+}
+
+.message-typing-container{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.message-typing-input{
+    width: calc(100% - 20px);
+    resize: none;
+    outline: none;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.message-typing-container button{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 25px;
+}
