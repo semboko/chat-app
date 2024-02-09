@@ -13,7 +13,7 @@
 .chat-container{
     flex-grow: 1;
     margin-right: 20px;
-    height: 60%;
+    height: 90%;
 }
 
 .chat-element header {
@@ -27,7 +27,7 @@
     margin-top: 20px;
     margin-left: 20px;
     border-radius: 20px;
-    min-height: 60%;
+    min-height: 90%;
 }
 
 .chat-container{
@@ -87,9 +87,10 @@
     right: 0;
 }
 
-@media (width <= 800px){
+@media (max-width: 800px){
     .groups-list-container{
         position: absolute;
+        display: none;
     }
 }
 
@@ -108,8 +109,8 @@
 .messages-container{
     position: absolute;
     bottom: 70px;
-    max-height: 700px;
-    overflow-y: scroll;
+    height: calc(100% - 140px);
+    overflow-y: auto;
 }
 
 .message-container{
@@ -120,6 +121,15 @@
     position: relative;
     margin-left: 40px;
     margin-bottom: 5px;
+}
+
+.message-user-avatar{
+    position: absolute;
+}
+
+.message-user-avatar img, 
+.message-user-avatar div{
+    border-radius: 30px;
 }
 
 .message-text{

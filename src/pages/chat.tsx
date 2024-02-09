@@ -1,5 +1,6 @@
 import './chat.css';
 
+import Avatar from 'react-avatar';
 import { FaMagnifyingGlass, FaRegPaperPlane } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,10 @@ function Chat(){
             </header>
             <div className="messages-container">
                 <div className="message-container">
+                    <div className="message-user-avatar">
+                        <Avatar size="30" name="Foo bar" />
+                    </div>
+                    
                     <div className="message-header">
                         <div className="message-author">
                             <span>User 1</span>
@@ -25,6 +30,9 @@ function Chat(){
                     </div>
                 </div>
                 <div className="message-container">
+                    <div className="message-user-avatar">
+                        <Avatar size="30" name="Tata baba" />
+                    </div>
                     <div className="message-header">
                         <div className="message-author">
                             <span>User 1</span>
@@ -38,6 +46,9 @@ function Chat(){
                     </div>
                 </div>
                 <div className="message-container">
+                    <div className="message-user-avatar">
+                        <Avatar size="30" name="Bobo bobo" />
+                    </div>
                     <div className="message-header">
                         <div className="message-author">
                             <span>User 1</span>
@@ -51,6 +62,9 @@ function Chat(){
                     </div>
                 </div>
                 <div className="message-container">
+                    <div className="message-user-avatar">
+                        <Avatar size="30" src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3" name="Bobo bobo" />
+                    </div>
                     <div className="message-header">
                         <div className="message-author">
                             <span>User 1</span>
