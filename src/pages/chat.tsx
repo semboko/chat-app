@@ -1,7 +1,8 @@
 import './chat.css';
 
+import { useEffect, useState } from 'react';
 import Avatar from 'react-avatar';
-import { FaMagnifyingGlass, FaRegPaperPlane } from 'react-icons/fa6';
+import { FaBars, FaMagnifyingGlass, FaRegPaperPlane } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 function Chat(){
@@ -90,34 +91,51 @@ function Chat(){
 
 
 export function ChatPage(){
+
+    const [leftPanel, setLeftPanel] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (window.innerWidth > 800){
+            setLeftPanel(true)
+        }
+    }, [])
+
     return (
-        <div className="chat-page">
-            <div className="groups-list-container">
-                <form className="group_search" action="">
-                    <label><FaMagnifyingGlass /></label>
-                    <input type="text" placeholder="Search" />
-                </form>
-
-                <div className="groups-list">
-                    <button className="add-group-button">+</button>
-                    <h2>Public groups</h2>
-                    <ul>
-                        <li><Link to="/chat">/main (788)</Link></li>
-                        <li><Link to="/chat">/group122 (12)</Link></li>
-                    </ul>
+        <div className="chat-page-container">
+            <header className="chat-page-header">
+                <div onClick={() => setLeftPanel(!leftPanel)} className="toogle-left-panel">
+                    <FaBars />
+                    {leftPanel && <div onClick={() => setLeftPanel(false)} className="blur-background"></div>}
                 </div>
-                <div className="groups-list">
-                    <button className="add-group-button">+</button>
-                    <h2>Private groups</h2>
-                    <ul>
-                        <li><Link to="/chat">/group12 (2)</Link></li>
-                        <li><Link to="/chat">/group13 (5)</Link></li>
-                    </ul>
-                </div>
-            </div>
+            </header>
+            <div className="chat-page">
+                <div className="groups-list-container" style={{display: leftPanel? "block" : "none"}}>
+                    <form className="group_search" action="">
+                        <label><FaMagnifyingGlass /></label>
+                        <input type="text" placeholder="Search" />
+                    </form>
 
-            <div className="chat-container">
-                <Chat />
+                    <div className="groups-list">
+                        <button className="add-group-button">+</button>
+                        <h2>Public groups</h2>
+                        <ul>
+                            <li><Link to="/chat">/main (788)</Link></li>
+                            <li><Link to="/chat">/group122 (12)</Link></li>
+                        </ul>
+                    </div>
+                    <div className="groups-list">
+                        <button className="add-group-button">+</button>
+                        <h2>Private groups</h2>
+                        <ul>
+                            <li><Link to="/chat">/group12 (2)</Link></li>
+                            <li><Link to="/chat">/group13 (5)</Link></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="chat-container">
+                    <Chat />
+                </div>
             </div>
         </div>
     )
