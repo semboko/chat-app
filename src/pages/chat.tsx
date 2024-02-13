@@ -98,7 +98,14 @@ export function ChatPage(){
         if (window.innerWidth > 800){
             setLeftPanel(true)
         }
-    }, [])
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 800){
+                setLeftPanel(true)
+            } else if (window.innerWidth <= 800 && leftPanel) {
+                setLeftPanel(false)
+            }
+        })
+    }, [leftPanel])
 
     return (
         <div className="chat-page-container">
