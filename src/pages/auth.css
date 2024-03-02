@@ -66,3 +66,9 @@
 .submit-button:hover {
     cursor: pointer;
 }
+
+.submit-button:disabled{
+    background-color: #f1f1f1;
+    color: #afafaf;
+    cursor: default;
+}

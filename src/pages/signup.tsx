@@ -3,12 +3,13 @@ import './auth.css';
 import axios, { AxiosResponse } from 'axios';
 import { SyntheticEvent, useState } from 'react';
 import { FaRegUser, FaUnlock } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 export function SignUpPage(){
 
     const [username, setUsername] = useState<string>("")
     const [password, setPassword] = useState<string>("")
+    const [submitted, setSubmitted] = useState<boolean>(false)
 
     const signup = (e: SyntheticEvent) => {
         e.preventDefault()
@@ -22,11 +23,13 @@ export function SignUpPage(){
             }
         }).then((res: AxiosResponse) => {
             console.log(res)
+            setSubmitted(true)
         })
     }
 
 
     return (
+        submitted ? <Navigate to={"/signin?username=" + username} /> :
         <div className="auth-page">
             <div className="form-container">
                 <header>Sign Up</header>
@@ -53,6 +56,7 @@ export function SignUpPage(){
                     </div>
                     <p>Already have an account? <Link to="/signin">Sign In</Link></p>
                     <button
+                        disabled={username === "" || password === ""}
                         onClick={signup}
                         className="submit-button">
                         Create Account
