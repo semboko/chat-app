@@ -3,7 +3,7 @@ import './chat.css';
 import { useEffect, useState } from 'react';
 import Avatar from 'react-avatar';
 import { FaBars, FaMagnifyingGlass, FaRegPaperPlane } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Chat(){
     return (
@@ -93,6 +93,14 @@ function Chat(){
 export function ChatPage(){
 
     const [leftPanel, setLeftPanel] = useState<boolean>(false)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(localStorage.getItem("token") === null){
+            navigate("/signin")
+        }
+    })
 
     useEffect(() => {
         if (window.innerWidth > 800){
